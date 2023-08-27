@@ -12,6 +12,7 @@ import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductEditComponent } from './product-edit.component';
 import { ProductEditGuard } from './product-edit.guard';
+import { TenantDetailsElectricComponent } from './electric-details-component';
 
 @NgModule({
   imports: [
@@ -25,13 +26,18 @@ import { ProductEditGuard } from './product-edit.guard';
         path: 'products/:id/edit',
         canDeactivate: [ProductEditGuard],
         component: ProductEditComponent
+      },
+      {
+        path: 'electric', 
+        component: TenantDetailsElectricComponent
       }
     ])
   ],
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    TenantDetailsElectricComponent
   ]
 })
 export class ProductModule { }
